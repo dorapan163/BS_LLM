@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS_LLM 首页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">BS_LLM</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/register">注册</a></li>
+                    <li><a href="/login">登录</a></li>
+                </ul>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main>
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">北盛智能HR Agent</h1>
+                    <p class="hero-description">BS_LLM 为你提供先进、智能、高效的 AI HR-Agent服务</p>
+                    <div class="hero-buttons">
+                        <a href="/register" class="btn secondary-btn">立即注册</a>
+                        <!-- 修改按钮文本和链接 -->
+                        <a href="/login" class="btn secondary-btn">立即登录</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 功能特性区域 -->
+        <section id="features" class="features">
+            <h2 class="section-title">核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3 class="feature-title">智能分析</h3>
+                    <p class="feature-description">基于强大的 AI 模型，自动对接聊天，提供智能HR服务</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3 class="feature-title">高效处理</h3>
+                    <p class="feature-description">高性能计算引擎，快速响应请求，大幅提升工作效率。</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3 class="feature-title">快速部署</h3>
+                    <p class="feature-description">虚拟化一键部署，快速启动，提供便捷的部署</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 BS_LLM 版权所有</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 定义以 hero_bg 开头的图片列表
+        const heroBgImages = [
+            "{{ url_for('static', filename='images/hero_bg_3.png') }}",
+            "{{ url_for('static', filename='images/hero_bg_5.png') }}",
+            "{{ url_for('static', filename='images/hero_bg_7.png') }}"
+            
+            // 可根据实际情况添加更多图片
+        ];
+
+        let currentImageIndex = 0;
+        const heroSection = document.querySelector('.hero');
+
+        function changeBackgroundImage() {
+            // 先获取当前背景图片，用于过渡效果
+            const currentBg = getComputedStyle(heroSection).backgroundImage;
+            // 设置新的背景图片
+            heroSection.style.backgroundImage = `url('${heroBgImages[currentImageIndex]}')`;
+            // 使背景图片过渡效果更平滑
+            heroSection.style.transition = 'background-image 2s ease-in-out';
+            currentImageIndex = (currentImageIndex + 1) % heroBgImages.length;
+        }
+
+        // 初始设置背景图片
+        changeBackgroundImage();
+
+        // 每隔 7 秒（包含 1 秒渐隐时间）切换一次背景图片
+        setInterval(changeBackgroundImage, 5000);
+    </script>
+</body>
+</html>

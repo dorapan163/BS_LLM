@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账户页面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">BS_LLM</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <!-- 添加头像图标 -->
+                    <li><i class="fas fa-user-circle account-avatar"></i></li>
+                    <li><span class="account-text">当前账户: {{ phone }}</span></li>
+                    <li><a href="/logout" class="logout-btn">退出登录</a></li>
+                </ul>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 账户内容区域 -->
+    <main class="account-content">
+        <!-- 设备列表区域 -->
+        <section class="device-list">
+            <div class="device-header">
+                <h2>设备列表</h2>
+                <button class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> 刷新设备
+                </button>
+            </div>
+            <div class="device-items-container">
+                <div class="device-item">
+                    设备 HUAWEI Mate30 5G
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 iPhone13 iOS_16
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 1
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 2
+                    <div class="device-status"></div>
+                </div>
+                <div class="device-item">
+                    设备 3
+                    <div class="device-status"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 设备展示区域 -->
+        <section class="device-display">
+            <!-- 暂时空白，后续可添加设备展示内容 -->
+            <input type="text" class="device-input" placeholder="输入文本...">
+            <button class="send-btn">发送</button>
+        </section>
+    </main>
+
+    <!-- 移除页脚部分 -->
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 BS_LLM 版权所有</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
